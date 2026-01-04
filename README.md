@@ -308,3 +308,104 @@ Built with:
 - [Google Gemini](https://ai.google.dev/) - AI for PDF parsing & advice
 - [uv](https://github.com/astral-sh/uv) - Fast Python package manager
 - [Claude Desktop](https://claude.ai/download) - AI assistant interface
+
+---
+
+## 🖥️ Platform-Specific Notes
+
+### Windows
+
+**Finding uv path:**
+````````powershell
+where uv
+````````
+
+Common locations:
+- `C:\Users\YourName\.cargo\bin\uv.exe`
+- `C:\Users\YourName\.local\bin\uv.exe`
+- `%LOCALAPPDATA%\Programs\uv\uv.exe`
+
+**Use the FULL path in your config!**
+
+Example Windows config:
+````````json
+{
+  "mcpServers": {
+    "budgettrak": {
+      "command": "C:\\Users\\YourName\\.local\\bin\\uv.exe",
+      "args": [
+        "--directory",
+        "C:\\Users\\YourName\\Documents\\Budgetrak",
+        "run",
+        "python",
+        "run_server.py"
+      ]
+    }
+  }
+}
+````````
+
+**Note:** Use double backslashes (`\\`) in JSON!
+
+### macOS
+
+**Finding uv path:**
+````````bash
+which uv
+````````
+
+Common location: `/Users/yourname/.local/bin/uv`
+
+Example macOS config:
+````````json
+{
+  "mcpServers": {
+    "budgettrak": {
+      "command": "/Users/yourname/.local/bin/uv",
+      "args": [
+        "--directory",
+        "/Users/yourname/Desktop/Projects/Budgetrak",
+        "run",
+        "python",
+        "run_server.py"
+      ]
+    }
+  }
+}
+````````
+
+### Linux
+
+**Finding uv path:**
+````````bash
+which uv
+````````
+
+Common locations:
+- `~/.local/bin/uv`
+- `~/.cargo/bin/uv`
+
+Example Linux config:
+````````json
+{
+  "mcpServers": {
+    "budgettrak": {
+      "command": "/home/yourname/.local/bin/uv",
+      "args": [
+        "--directory",
+        "/home/yourname/Budgetrak",
+        "run",
+        "python",
+        "run_server.py"
+      ]
+    }
+  }
+}
+````````
+
+---
+
+## ⚠️ Important: Use Full Paths!
+
+Claude Desktop may not find `uv` in your PATH, so **always use the full path** to the `uv` executable in your config file!
+
