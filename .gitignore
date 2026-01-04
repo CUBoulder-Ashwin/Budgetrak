@@ -1,0 +1,52 @@
+# CRITICAL - Never commit these!
+.env
+.env.local
+*.env
+
+# Google API credentials
+token.pickle
+token.json
+*_credentials.json
+budgetrak_credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+logs/
+
+# uv
+uv.lock
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Downloaded PDFs
+downloads/
+statements/
